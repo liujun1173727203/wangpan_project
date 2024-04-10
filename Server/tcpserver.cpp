@@ -3,12 +3,16 @@
 #include "mytcpserver.h"
 #include <QFile>
 #include<QDebug>
+#include"dao.h"
+
+
 TcpServer::TcpServer(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::TcpServer)
 {
     ui->setupUi(this);
     loadConfig();
+    DAO::getInstance().init();
     MyTcpServer::Getinstance().listen(QHostAddress(this->m_strIP),this->m_usPort);
 }
 
@@ -29,3 +33,4 @@ void TcpServer::loadConfig()
     }
 
 }
+

@@ -17,6 +17,7 @@ public:
     TcpServer(QWidget *parent = nullptr);
     ~TcpServer();
     void loadConfig();
+    void linkDatabase();
 
 private:
     Ui::TcpServer *ui;
