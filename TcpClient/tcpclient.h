@@ -22,7 +22,10 @@ public:
     static TcpClient &getInstance();
     QTcpSocket &getSocket();
     QString getName();
+    void setCurPath(const char * path);
+    QString getCurPath();
     QMap<QString,P2pchat *> &getChatList();
+    void setSavePath(const QString path);
 public slots:
     void showConnect();
     void recvMsg();
@@ -41,6 +44,13 @@ private:
     quint16 m_usPort;
     QString m_cName;
     QTcpSocket m_socket;
+    QString m_sCurPath;
+
+    QFile mfile;
+    qint64 mTotal;
+    qint64 m_iRecved;
+    bool isUpload;
+    QString m_savepath;
 
 };
 #endif // TCPCLIENT_H

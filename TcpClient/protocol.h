@@ -14,6 +14,18 @@ typedef unsigned int uint;
 #define LOGIN_FAILED "login failed: name or pwd error"
 #define ADD_SUCCESS "add friend success"
 #define DEL_SUCCESS "delete success"
+#define DIR_EXIST "dir is exist"
+#define DEL_FAIL "delete fail"
+#define DIR_SUCCESS "create success"
+#define DIR_ERROR "FILE path is error"
+#define DIR_NO_EXIST "dir is exist"
+#define RENAME_SUCCESS  "rename success"
+#define REFUSE_ADD  "refuse add"
+#define RENAME_FAIL  "rename fail"
+#define UPLOAD_FAIL "upload fail"
+#define UPLOAD_SUCCESS "upload success"
+#define SHARE_SUC "share success"
+#define SHARE_FAIL "share ok"
 enum ENUM_MSG_TYPE{
     ENUM_MSG_TYPE_MIN=0,
     ENUM_MSG_TYPE_MAX=0X00ffffff,
@@ -40,8 +52,39 @@ enum ENUM_MSG_TYPE{
     ENUM_MSG_TYPE_SEND_MESSAGE_REQUEST,
     ENUM_MSG_TYPE_SEND_MESSAGE_RESPONSE,
 
-};
+    ENUM_MSG_TYPE_CREATE_FILE_REQUEST,
+    ENUM_MSG_TYPE_CREATE_FILE_RESPONSE,
+    ENUM_MSG_TYPE_CREATE_DIR_REQUEST,
+    ENUM_MSG_TYPE_CREATE_DIR_RESPONSE,
+    ENUM_MSG_TYPE_CREATE_FLUSH_REQUEST,
+    ENUM_MSG_TYPE_CREATE_FLUSH_RESPONSE,
+    ENUM_MSG_TYPE_DEL_DIR_REQUEST,
+    ENUM_MSG_TYPE_DEL_DIR_RESPONSE,
+    ENUM_MSG_TYPE_RENAME_DIR_REQUEST,
+    ENUM_MSG_TYPE_RENAME_DIR_RESPONSE,
 
+    ENUM_MSG_TYPE_ENTER_DIR_REQUEST,
+    ENUM_MSG_TYPE_ENTER_DIR_RESPONSE,
+
+    ENUM_MSG_TYPE_UPLOAD_REQUEST,
+    ENUM_MSG_TYPE_UPLOAD_RESPONSE,
+    ENUM_MSG_TYPE_DEL_FILE_REQUEST,
+    ENUM_MSG_TYPE_DEL_FILE_RESPONSE,
+    ENUM_MSG_TYPE_DOWNLOAD_REQUEST,
+    ENUM_MSG_TYPE_DOWNLOAD_RESPONSE,
+    ENUM_MSG_TYPE_SHARE_REQUEST,
+    ENUM_MSG_TYPE_SHARE_RESPONSE,
+
+    ENUM_MSG_TYPE_SHARE_RESEND_REQUEST,
+    ENUM_MSG_TYPE_SHARE_RESEND_RESPONSE,
+
+    ENUM_MSG_TYPE_MOVE_REQUEST,
+    ENUM_MSG_TYPE_MOVE_RESPONSE,
+};
+struct FileInfo{
+    char FileName[32];
+    int fileType;
+};
 //消息协议
 struct PDU{
     uint uiPDULen;

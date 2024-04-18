@@ -29,3 +29,8 @@ Friend *OpeWidget::getFriend()
 {
     return this->m_pFriend;
 }
+
+Book *OpeWidget::getBook()
+{
+    return m_pBook;
+}

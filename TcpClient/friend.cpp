@@ -116,7 +116,6 @@ void Friend::delfriend()
     pdu=NULL;
     this->flushfriend();
 }
-
 QMap<QString, P2pchat*> Friend::chatlist;
 QMap<QString,P2pchat *> &Friend::getChatList()
 {
@@ -138,5 +137,11 @@ void Friend::chatFriend()
         Friend::chatlist.insert(name,p2pchat);
      };
      chatlist.value(name)->show();
+
+}
+
+QListWidget *Friend::getFriendList()
+{
+    return this->m_pFriendListwidget;
 
 }

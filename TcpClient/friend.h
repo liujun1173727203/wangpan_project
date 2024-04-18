@@ -20,6 +20,7 @@ public:
     void setUsrOnline(PDU *pdu);
     static QMap<QString,P2pchat *> &getChatList();
     static QMap<QString, P2pchat*> chatlist;
+    QListWidget *getFriendList();
 public slots:
      void showOnline();
      void searchOnlinefriend();
